@@ -1,0 +1,15 @@
+  //Put it on setting_schema.json
+  {
+    "name": "Product Sidebar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "product_linklist",
+        "label": "Product Menu"
+      }
+    ]
+  }
