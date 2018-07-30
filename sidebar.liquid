@@ -1,0 +1,23 @@
+<!--Put it to page you want to show-->
+<div class="custom-sidebar thirty">
+  <ul class="ctm-product_list">
+    {% for link in linklists[settings.product_linklist].links %}
+      {% if link.levels > 0 %}
+        <li class="ctm-has-child {% if sub_link.active or sub_link.child_active %}active{% endif %}">
+          <a>{{ link.title }} <!--<i class="down fas fa-caret-down"></i>--></a>
+            <ul class="sub-menu">
+              {% for sub_link in link.links %}
+                <li {% if sub_link.active %}class="active"{% endif %}>
+                  <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+        </li>
+      {% else %}
+        <li {% if link.active %}class="active"{% endif %}>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
